@@ -74,7 +74,17 @@ user.hasMany(vote,{
 //   console.log(err)
 // });
 // -------------------------------------------
+app.get('/', (req, res, next) => {
 
+  res.status(200).json({
+      status: 'success',
+      data: {
+          name: 'groupomania',
+          version: '0.1.0'
+      }
+  });
+
+});
 app.use('/api/user', userRoutes,limiter);
 app.use('/api/posts', postRoutes);
 app.use('/api/comments', commRoutes)
