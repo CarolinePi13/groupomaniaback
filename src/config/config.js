@@ -8,14 +8,15 @@ const { Sequelize } = require('sequelize');
 //   });
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialectOptions: {
+  dialect: 'postgres',
+  protocol: 'postgres',
+  dialectOptions: {
       ssl: {
-        require: true,
-        rejectUnauthorized: false
+          require: true,
+          rejectUnauthorized: false
       }
-    }
   }
-);
+});
 
 sequelize
   .authenticate()
