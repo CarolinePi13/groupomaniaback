@@ -1,8 +1,8 @@
 const { Sequelize } = require('sequelize');
 
 
-const sequelize = new Sequelize('groupomania', 'postgres', process.env.DB_PASSWORD, {
-    host: 'localhost',
+const sequelize = new Sequelize(process.env.DB_NAME, 'postgres', process.env.DB_PASSWORD, {
+    host: 'ec2-54-74-60-70.eu-west-1.compute.amazonaws.com',
     port:5432,
     dialect: 'postgres'
   });
